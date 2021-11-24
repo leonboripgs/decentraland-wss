@@ -11,6 +11,7 @@ wss.on("connection", (clientWs, request) => {
   ws.room = request.url || "";
 
   ws.on("message", function incoming(data) {
+    console.log("new message arrived");
     wss.clients.forEach(function each(client) {
       const cWs = client as customWs;
 
